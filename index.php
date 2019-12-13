@@ -1,19 +1,5 @@
-<!DOCTYPE html>
-<html lang='cs'>
-  <head>
-    <title></title>
-    <meta charset='utf-8'>
-    <meta name='description' content=''>
-    <meta name='keywords' content=''>
-    <meta name='author' content=''>
-    <meta name='robots' content='all'>
-    <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
-    <link href='/favicon.png' rel='shortcut icon' type='image/png'>
-    <link rel="stylesheet" href="style.css" type="text/css">
-   
-  </head>
-  <body>
-    <?php
+
+    <?php include ("./header.php");
             session_start();       
             if(isset($_SESSION["nick"])) {              //když jsi přihlášený, nemusíš se znovu přihlásit
             $link = mysqli_connect('localhost:3306', 'root', '', 'tickety');
@@ -28,9 +14,9 @@
                 
                 
           }?>
-          <a href='./registration.php'>Registrace</a>
+          
           <form action='#' method='post' class='frm'>
-                <table>
+                <table class='tabLogin'>
                     <h1>Přihlášení:</h1>  
                     <tr><td>Nick:</td><td><input type='text' name='nick'></td></tr>
                     <tr><td>Heslo:</td><td><input type='password' name='pass'></td></tr> 
@@ -50,5 +36,6 @@
                 $login->LogIn();				
             }         
     ?>
+    <a href='./registration.php'>Registrace</a>
   </body>
 </html>

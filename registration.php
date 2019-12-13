@@ -1,5 +1,5 @@
 <form action='#' method='post'>
-            <table>
+            <table class='tabLogin'>
               <h1>Registrace:</h1>
               <tr><td>Jméno:</td><td><input type='text' name='name'></td></tr>
               <tr><td>Příjmení:</td><td><input type='text' name='lastname'></td></tr>
@@ -9,9 +9,11 @@
               <tr><td>Email:</td><td><input type='text' name='email'></td></tr>
               <tr><td><input type='submit' name='ok_R' value='Zaregistrovat'></td><td></td></tr>
             </table>
+            <a href='./index.php'>Přihlášení</a>
 </form>
 
 <?php
+    include "./header.php";
     if(isset($_POST["ok_R"])) {
         $name = $_POST["name"];
         $lastname = $_POST["lastname"];

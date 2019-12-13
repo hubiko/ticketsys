@@ -1,14 +1,15 @@
+
 <?php
     class Account {
         private $id, $name, $lastname, $nick, $pass, $email;
         public function Show() {    //zobrazí veškeré info o uživateli
             echo "<form method='post'>
             <table>
-            <tr><td>ID: </td><td>$this->id</td></tr>
-            <tr><td>Jméno: </td><td>$this->name</td></tr>
-            <tr><td>Příjmení: </td><td>$this->lastname</td></tr>
-            <tr><td>Email: </td><td>$this->email</td></tr>
-            <tr><td>Nick: </td><td>$this->nick</td></tr>        
+            <tr><td>ID: </td><td>".$_SESSION['id']."</td></tr>
+            <tr><td>Jméno: </td><td>".$_SESSION['name']."</td></tr>
+            <tr><td>Příjmení: </td><td>".$_SESSION['lastname']."</td></tr>
+            <tr><td>Email: </td><td>".$_SESSION['email']."</td></tr>
+            <tr><td>Nick: </td><td>".$_SESSION['nick']."</td></tr>        
             </table>
           </form><br>";
           }

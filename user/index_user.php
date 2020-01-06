@@ -2,10 +2,10 @@
 <link rel="stylesheet" href="../css/main.css" type="text/css">
 </head>
 <body>
-  <nav>
-    <a href="./ticket_new">Nový ticekt</a>
-    <a href="./ticket_view">Mé tickety</a>
-  </nav>
+  <?php $id = $_GET['uid'];
+    include "./nav.php";
+  ?>
+  
   <article id='user_up'>
     <section id='user_info'>
         <?php session_start();
@@ -13,6 +13,9 @@
           $show = new Account();             //profilové info
           $show->Show();
         ?>
+          <form action="#" method='post'>
+            <input type="submit" name="logout" value="Odhlásit se">
+          </form>
     </section>
     <section id='user_ticketsPartly'>
       <?php
@@ -34,22 +37,14 @@
 	&& $_SESSION["autor"]==3) {    
                                          //kód
 		echo "user";                                                 
-		echo "<form action='#' method='post'>                            
-		<input type='submit' name='logout' value='Odhlásit se'>
-		</form>";
-		if(isset($_POST["logout"])) {
-			
-			session_start();
-			$logout = new Account();
-			$logout->Unlog();
-		}
+		
 		
 	$id = $_GET["uid"]; //ošetřit
   echo $_SESSION["id"];
-
+  if(isset($_POST["logout"])) {
     
-
-    
-    
-
-  }
+    session_start();
+    $logout = new Account();
+    $logout->Unlog();
+      }
+    }

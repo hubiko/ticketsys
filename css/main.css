@@ -23,6 +23,24 @@
 		display: block;
 	}
 
+		article#user_up, article#user_down {
+			border: 1px solid black;
+			width: 80%;
+			height: 350px;
+			margin: auto;
+			margin-top: 20px;
+		}
+			section#user_info {
+				float: left;
+				width: 40%;
+				/*margin: 0 0 0 20px;*/
+			}
+			section#user_ticketsPartly {
+				float: right;
+				width: 40%;
+				/*margin: 0 20px 0 0;*/				
+			}
+
 	body {
 		line-height: 1;
 	}
@@ -49,6 +67,9 @@
 			width: 40%;
 			margin-top: 10%;
 		}
+	td#logout {
+		float:right;
+	}
 
 	body {
 		-webkit-text-size-adjust: none;

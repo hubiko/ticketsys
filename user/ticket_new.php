@@ -1,3 +1,8 @@
+
+<head>
+<link rel="stylesheet" href="../css/main.css" type="text/css">
+</head>
+<?php include "./nav.php";?>
 <form method="post">
   <h1>Nový ticket</h1>
     <table>

@@ -53,13 +53,36 @@
     class Tickets {
         public $ticket_query, $status_query, $status_c, $q, $record, $id_ticket, $link;
         public function ShowAll() { //ticket_view.php
-
+            $this->link = mysqli_connect('localhost:3306', 'root', '', 'tickety');
+            $this->ticket_query = mysqli_query($this->link, "select * from tickety where 
+            ma_uzivatele_id=".$_SESSION['id']." order by id desc limit 10");
+            foreach($this->ticket_query as $this->q) {             
+                $this->cat_query = mysqli_query($this->link, "select * from kategorie where 
+                id=".$this->q["kategorizuje_id"]."");
+                $this->record = mysqli_fetch_array($this->cat_query);
+                $this->category = $this->record->typ;            
+                
+                $this->status_query = mysqli_query($this->link, "select * from statusy where 
+                id=".$this->q["statusuje_id"]."");
+                $this->record = mysqli_fetch_object($this->status_query);
+                $this->status = $this->record->nazev;
+                $this->status_c = $this->record->barva;
+                
+                $this->user_query = mysqli_query($this->link, "select * from uzivatele where 
+                id=".$this->q["ma_uzivatele_id"]."");
+                $this->record = mysqli_fetch_object($this->user_query);
+                $this->user = $this->record->nick;
+                $this->id_ticket = $this->q["id"];
+                echo "<tr><td>".$this->q["id"]."</td><td>".$this->q["predmet"]."</td><td>$this->category</td>
+                <td style='background-color: $this->status_c;'>$this->status</td>
+                <a href='./ticket_one_user.php?uid=".$_SESSION['id']."&tid=$this->id_ticket'>+</a></td></tr>";
+            }                             
         }
 
         public function ShowPart() { 
              $this->link = mysqli_connect('localhost:3306', 'root', '', 'tickety');
              $this->ticket_query = mysqli_query($this->link, "select * from tickety where 
-             ma_uzivatele_id=".$_SESSION['id']." order by id desc");
+             ma_uzivatele_id=".$_SESSION['id']." order by id desc limit 4");
              foreach($this->ticket_query as $this->q) {             
                  $this->cat_query = mysqli_query($this->link, "select * from kategorie where 
                  id=".$this->q["kategorizuje_id"]."");

@@ -40,7 +40,7 @@
 
         public function LogIn() {
 			
-			$this->link = mysqli_connect('localhost:3306', 'root', '', 'tickety'); //doma port 3307
+			include("./connectDB.php");//doma port 3307
 			$this->pass=md5(md5($this->pass));
             $this->dotaz = mysqli_query($this->link, "select * from uzivatele where nick='$this->nick'
              and heslo='$this->pass'");
@@ -96,7 +96,7 @@
                     echo "Hesla se neshodují";
                 else {
                     $this->pass = md5(md5($this->pass));
-                    $this->link = mysqli_connect('localhost:3306', 'root', '', 'tickety');
+                    include("./connectDB.php");
                     $this->zapis = mysqli_query($this->link, "insert into uzivatele values (null, 
                     '$this->name', '$this->lastname', '$this->nick', 
                     '$this->pass', '$this->email', 3)");

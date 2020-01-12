@@ -11,7 +11,7 @@
             <tr><td>Email: </td><td>".$_SESSION['email']."</td></tr>
             <tr><td>Nick: </td><td>".$_SESSION['nick']."</td></tr>        
             </table>
-          </form><br>";
+          </form>";
           }
 
         public function Edit() {

@@ -21,6 +21,7 @@
         <div class="wHeader">
           <h3>Nový ticket</h3>
         </div>
+        <div class="wContent">
         <form method="post">
             <table>
               <tr><td>Předmět:</td><td><input type="text" name="subject" ></td></tr>
@@ -52,23 +53,31 @@
         }
     }    
 ?>
+        </div>
+        
     </div>
     <div class="info">
-      
+        <div class="iHeader">
+          <h3>Profil</h3>
+        </div>
+        <div class="iContent">
+          <div class="avatar">
+            <div class="pic">
+              
+            </div>
+          </div>
+          <div class="iTable">
+            <?php session_start();
+            require_once("../account.php");
+            $show = new Account();             //profilové info
+            $show->Show();
+            ?>
+          </div>
+        </div>
     </div>
   </div>
   
   <!--<article id='user_up'>
-    <section id='user_info'>
-    <?php /*session_start();
-          require_once("../account.php");
-          $show = new Account();             //profilové info
-          $show->Show();
-        ?>
-          <form action="#" method='post'>
-            <input type="submit" name="logout" value="Odhlásit se">
-          </form>
-    </section>
     <section id='user_ticketsPartly'>
       <?php
         require_once("./tickets.php");
@@ -100,5 +109,5 @@
     $logout->Unlog();
       }
     }
-  */?>
+  ?>
     

@@ -70,20 +70,42 @@
 			background-color: white;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 			float: left;
+			border-radius: 4px;
 		}
-			.wHeader {
+			.wHeader, .iHeader {
 				height: 50px;
-				background-color:#ededed;
+				background-color:white;
+				width: 90%;
+				margin: auto;
 			}
-		.info {
-			height: 500px;;
-			width: 30%;
+			.wContent, .iContent {
+				width: 90%;
+				margin: auto;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			}
+		.info  {
+			width: 22%;
 			margin-right: 3%;
 			margin-top: 3%;
 			background-color: white;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 			float:right;
 		} 
+			.avatar {
+				width: 180px;
+				height: 180px;
+				margin: auto;
+				padding-top: 5%;
+			}
+				.pic {
+					width: 150px;
+					height: 150px;
+					margin: auto;
+					background-color: #ededed;
+					margin-bottom: 5%;
+					box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+				}
+			
 
 	body {
 		line-height: 1;

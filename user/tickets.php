@@ -16,7 +16,7 @@
             return $this->user_id;
         }
         public function getCategoryId() {
-            $this->link = mysqli_connect('127.0.0.1:3306', 'root', '', 'tickety');
+            include("../connectDB.php");
             $this->cat_query = mysqli_query($this->link, "select id from kategorie where typ='$this->category'");
             while($this->cat_db = mysqli_fetch_object($this->cat_query)) {
               $this->category_id = $this->cat_db->id;
@@ -29,7 +29,7 @@
         } 
 
         public function Add() { //ticket_new.php   
-            $this->link = mysqli_connect('127.0.0.1:3306', 'root', '', 'tickety');                                                                                                     
+            include("../connectDB.php");                                                                                                     
             $this->insert = mysqli_query($this->link, "insert into tickety values (null, '$this->subject', 
             '$this->desc', '".$this->getCategoryId()."', 
             '".$this->getUserId()."', 3, 1, 0, '".$this->getDate()."', 0)");
@@ -53,7 +53,7 @@
     class Tickets {
         public $ticket_query, $status_query, $status_c, $q, $record, $id_ticket, $link, $cat_query;
         public function ShowAll() { //ticket_view.php
-            $this->link = mysqli_connect('localhost:3306', 'root', '', 'tickety');
+            include("../connectDB.php");
             $this->ticket_query = mysqli_query($this->link, "select * from tickety where 
             ma_uzivatele_id=".$_SESSION['id']." order by id desc limit 10");
             foreach($this->ticket_query as $this->q) {             
@@ -81,7 +81,10 @@
 
         public function ShowPart() { 
             include("../connectDB.php");
-            echo "<table>";
+            echo "<table>
+            <tr>
+                <th>ID</th><th>Název</th><th>Kategorie</th><th>Status</th><th></th>
+            </tr>";
              $this->ticket_query = mysqli_query($this->link, "select * from tickety where 
              ma_uzivatele_id=".$_SESSION['id']." order by id desc limit 4");
              foreach($this->ticket_query as $this->q) {             
@@ -102,8 +105,8 @@
                  $this->user = $this->record->nick;
                  $this->id_ticket = $this->q["id"];
                  echo "<tr><td>".$this->q["id"]."</td><td>".$this->q["predmet"]."</td><td>$this->category</td>
-                 <td style='background-color: $this->status_c;'>$this->status</td>
-                 <td><a href='./ticket_one_user.php?uid=".$_SESSION['id']."&tid=$this->id_ticket'>+</a></td></tr>";
+                 <td>$this->status</td>
+                 <td style='background-color: $this->status_c;'><a href='./ticket_one_user.php?uid=".$_SESSION['id']."&tid=$this->id_ticket'>+</a></td></tr>";
              }
              echo "</table>";                             
          } 

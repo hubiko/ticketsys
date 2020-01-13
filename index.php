@@ -16,7 +16,7 @@
           }?>
           
           <form action='#' method='post' class='frm'>
-                <table class='tabLogin'>
+                <table class='window'>
                     <h1>Přihlášení:</h1>  
                     <tr><td>Nick:</td><td><input type='text' name='nick'></td></tr>
                     <tr><td>Heslo:</td><td><input type='password' name='pass'></td></tr> 

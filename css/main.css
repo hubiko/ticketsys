@@ -17,6 +17,15 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+		color: #2A2C2D;
+	}
+
+	.header {
+		height: 40px;
+		background-color: #2A2C2D;
+		position: fixed;
+		z-index: 1;
+		width: 100%;
 	}
 	.nav {
 		color: white;
@@ -45,9 +54,10 @@
 			}
 	.sidebar {
 		float: left;
-		width:15%;
-		background-color: #3498db;
+		width:160px;
+		background-color: #2A2C2D;
 		height: 100%;
+		position: fixed;
 	}
 		.sHeader {
 			height: 100px;
@@ -55,26 +65,34 @@
 
 	.content {
 		background-color: #ededed;
-		width: 85%;
 		height: 100%;
-		float: right;
+		margin-left: 160px;
+		padding-bottom: 2.5%;
 	}
 		.cHeader {
 			height: 100px;
 			background-color: white;
+			margin-bottom: 2.5%;
 		}
+			.contentBackg {
+				background-color: white;
+				width: 95%;
+				height: 84%;
+				margin: auto;
+				margin-bottom: 2.5%;
+			}
 		.window {
-			width: 600px;
+			width: 60%;
 			margin-left: 3%;
 			margin-top: 3%;
-			background-color: white;
+			background-color: #ededed;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 			float: left;
 			border-radius: 4px;
 		}
 			.wHeader, .iHeader {
 				height: 50px;
-				background-color:white;
+				background-color:#ededed;
 				width: 90%;
 				margin: auto;
 			}
@@ -87,7 +105,7 @@
 			width: 22%;
 			margin-right: 3%;
 			margin-top: 3%;
-			background-color: white;
+			background-color: #ededed;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 			float:right;
 		} 
@@ -101,7 +119,7 @@
 					width: 150px;
 					height: 150px;
 					margin: auto;
-					background-color: #ededed;
+					background-color: white;
 					margin-bottom: 5%;
 					box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 				}
@@ -1909,7 +1927,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #3498db;
+		color:#2A2C2D;
 	}
 
 	blockquote {
@@ -2054,7 +2072,7 @@
 	input[type="button"],
 	button,
 	.button {
-		background-color: #3498db;
+		background-color: #2A2C2D;
 		color: #fff !important;
 	}
 
@@ -2063,7 +2081,7 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #4aa3df;
+			background-color: #2A2C2D;
 		}
 
 		input[type="submit"]:active,
@@ -2071,7 +2089,7 @@
 		input[type="button"]:active,
 		button:active,
 		.button:active {
-			background-color: #258cd1;
+			background-color: #2A2C2D;
 		}
 
 		input[type="submit"].alt,
@@ -2881,7 +2899,7 @@
 	}
 
 	table {
-		margin: 0 0 2em 0;
+		margin: none;
 		width: 100%;
 	}
 
